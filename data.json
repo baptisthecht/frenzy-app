@@ -1,0 +1,184 @@
+{
+    "company": {
+        "name": "O'Tacos",
+        "banner": "/company/top_banner.jpg",
+        "pause_screen": "/company/pause_screen.jpg"
+    },
+    "categories": [
+        {
+            "name": "Les classiques",
+            "id": 0,
+            "products": [
+                {
+                    "id": 0,
+                    "name": "Le Classique",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits",
+                    "price": 5.90,
+                    "image": "/products/le_classique.jpg",
+                    "variants": [
+                        {
+                            "id": 0,
+                            "name": "Taille",
+                            "options": [
+                                {
+                                    "name": "Moyen",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Grand",
+                                    "supplement": 0.8
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Accompagnement",
+                            "options": [
+                                {
+                                    "name": "Frites",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Frites au cheddar",
+                                    "supplement": 0.5
+                                },
+                                {
+                                    "name": "Oignon rings",
+                                    "supplement": 0
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Boisson",
+                            "options": [
+                                {
+                                    "name": "Coca Cola 33cl",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Coca Cola Zero 33cl",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Coca Cola Cherry 33cl",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Ice tea 33cl",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Fanta 33cl",
+                                    "supplement": 0
+                                },
+                                {
+                                    "name": "Sprite 33cl",
+                                    "supplement": 0
+                                }
+                            ]
+                        }
+                        
+                    ]
+                },
+                {
+                    "id": 1,
+                    "name": "Le Chèvre",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, chèvre",
+                    "price": 6.90,
+                    "image": "/products/le_chevre.jpg"
+                },
+                {
+                    "id": 2,
+                    "name": "Le Poulet",
+                    "description": "Poulet, sauce fromagère, salade, tomate, oignons frits",
+                    "price": 6.90,
+                    "image": "/products/le_poulet.jpg"
+                },
+                {
+                    "id": 3,
+                    "name": "Le Steak",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak",
+                    "price": 7.90,
+                    "image": "/products/le_steak.jpg"
+                },
+                {
+                    "id": 4,
+                    "name": "Le Steak Bacon",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak, bacon",
+                    "price": 8.90,
+                    "image": "/products/le_steak_bacon.jpg"
+                },
+                {
+                    "id": 5,
+                    "name": "Le Steak Chèvre",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak, chèvre",
+                    "price": 8.90,
+                    "image": "/products/le_steak_chevre.jpg"
+                },
+                {
+                    "id": 6,
+                    "name": "Le Steak Bacon Chèvre",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak, bacon, chèvre",
+                    "price": 9.90,
+                    "image": "/products/le_steak_bacon_chevre.jpg"
+                }
+            ]
+        },
+        {
+            "name": "Les menus",
+            "id": 1,
+            "products": [
+                {
+                    "id": 7,
+                    "name": "Le Classique et tout et tout et tout",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits",
+                    "price": 5.90,
+                    "image": "/products/le_classique.jpg"
+                },
+                {
+                    "id": 8,
+                    "name": "Le Chèvre",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, chèvre",
+                    "price": 6.90,
+                    "image": "/products/le_chevre.jpg"
+                },
+                {
+                    "id": 9,
+                    "name": "Le Poulet",
+                    "description": "Poulet, sauce fromagère, salade, tomate, oignons frits",
+                    "price": 6.90,
+                    "image": "/products/le_poulet.jpg"
+                },
+                {
+                    "id": 10,
+                    "name": "Le Steak",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak",
+                    "price": 7.90,
+                    "image": "/products/le_steak.jpg"
+                },
+                {
+                    "id": 11,
+                    "name": "Le Steak Bacon",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak, bacon",
+                    "price": 8.90,
+                    "image": "/products/le_steak_bacon.jpg"
+                },
+                {
+                    "id": 12,
+                    "name": "Le Steak Chèvre",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak, chèvre",
+                    "price": 8.90,
+                    "image": "/products/le_steak_chevre.jpg"
+                },
+                {   
+                    "id": 13,
+                    "name": "Le Steak Bacon Chèvre",
+                    "description": "Steak haché, sauce fromagère, salade, tomate, oignons frits, steak, bacon, chèvre",
+                    "price": 9.90,
+                    "image": "/products/le_steak_bacon_chevre.jpg"
+                }
+            ]
+        }
+    ]
+}
