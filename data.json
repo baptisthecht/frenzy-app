@@ -92,7 +92,43 @@
                                     "image": "/company/img_menu.png"
                                 }
                             ]
-                        }                        
+                        },
+                        {
+                            "id": 3,
+                            "name": "Dessert",
+                            "options": [
+                                {
+                                    "name": "Coca Cola 33cl",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Coca Cola Zero 33cl",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Coca Cola Cherry 33cl",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Ice tea 33cl",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Fanta 33cl",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Sprite 33cl",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                }
+                            ]
+                        }                      
                     ]
                 },
                 {

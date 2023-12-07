@@ -34,7 +34,7 @@ export default function ProductCard(props: any) {
                 </div>
             </div>
             { variants ? variants.map((variant: any, index: number) => (
-                step === variant.id && <VariantModal key={index} variant={variant} product={product} increment={() => setStep((previous) => previous + 1)} resetStep={() => {setStep(-1)}} />
+                step === variant.id && <VariantModal key={index} variant={variant} step={step} product={product} increment={() => setStep((previous) => previous + 1)} resetStep={() => {setStep(-1)}} />
             )) : <></>}
 
         </div>
