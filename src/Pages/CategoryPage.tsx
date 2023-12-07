@@ -7,6 +7,9 @@ import TotalBar from "../Components/TotalBar";
 import ActionButtons from "../Components/ActionButtons";
 import CartPreview from "../Components/CartPreview";
 import Modal from "../Components/Modal";
+import WhereToEatModal from "../Components/WhereToEatModal";
+import EatHereChoiceModal from "../Components/EatHereChoiceModal";
+import ConfirmCartModal from "../Components/ConfirmCartModal";
 
 export default function CategoryPage() {
 
@@ -20,7 +23,6 @@ export default function CategoryPage() {
         window.location.href = '/cat/0';
     }
 
-
   return (
     <div className="h-screen flex flex-col">
         <TopBanner />
@@ -32,6 +34,9 @@ export default function CategoryPage() {
         <CartPreview />
         <ActionButtons />
         <Modal />
+        <WhereToEatModal />
+        <EatHereChoiceModal />
+        <ConfirmCartModal />
     </div>
   )
 }

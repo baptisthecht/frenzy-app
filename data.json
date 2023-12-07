@@ -2,7 +2,11 @@
     "company": {
         "name": "O'Tacos",
         "banner": "/company/top_banner.jpg",
-        "pause_screen": "/company/pause_screen.jpg"
+        "pause_screen": "/company/pause_screen.jpg",
+        "main_color": "#d87379",
+        "where_to_eat": ["Sur place", "A emporter"],
+        "multiple_eat_here": true,
+        "eat_here_possibilities": ["En salle", "En terrasse"]
     },
     "categories": [
         {
@@ -21,64 +25,74 @@
                             "name": "Taille",
                             "options": [
                                 {
-                                    "name": "Moyen",
-                                    "supplement": 0
+                                    "name": "Menu classique",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 },
                                 {
-                                    "name": "Grand",
-                                    "supplement": 0.8
+                                    "name": "Menu large",
+                                    "supplement": 0.8,
+                                    "image": "/company/img_menu.png"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 1,
+                            "name": "Accompagnement",
+                            "options": [
+                                {
+                                    "name": "Frites",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Frites au cheddar",
+                                    "supplement": 0.5,
+                                    "image": "/company/img_menu.png"
+                                },
+                                {
+                                    "name": "Oignon rings",
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 }
                             ]
                         },
                         {
                             "id": 2,
-                            "name": "Accompagnement",
-                            "options": [
-                                {
-                                    "name": "Frites",
-                                    "supplement": 0
-                                },
-                                {
-                                    "name": "Frites au cheddar",
-                                    "supplement": 0.5
-                                },
-                                {
-                                    "name": "Oignon rings",
-                                    "supplement": 0
-                                }
-                            ]
-                        },
-                        {
-                            "id": 3,
                             "name": "Boisson",
                             "options": [
                                 {
                                     "name": "Coca Cola 33cl",
-                                    "supplement": 0
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 },
                                 {
                                     "name": "Coca Cola Zero 33cl",
-                                    "supplement": 0
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 },
                                 {
                                     "name": "Coca Cola Cherry 33cl",
-                                    "supplement": 0
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 },
                                 {
                                     "name": "Ice tea 33cl",
-                                    "supplement": 0
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 },
                                 {
                                     "name": "Fanta 33cl",
-                                    "supplement": 0
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 },
                                 {
                                     "name": "Sprite 33cl",
-                                    "supplement": 0
+                                    "supplement": 0,
+                                    "image": "/company/img_menu.png"
                                 }
                             ]
-                        }
-                        
+                        }                        
                     ]
                 },
                 {

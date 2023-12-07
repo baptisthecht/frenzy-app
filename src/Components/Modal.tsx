@@ -52,7 +52,7 @@ export default function Example() {
                 <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
                   <button
                     type="button"
-                    className="text-xl inline-flex w-full justify-center rounded-md bg-orange-500 px-4 py-3 font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
+                    className="text-xl inline-flex w-full justify-center rounded-md bg-primary px-4 py-3 font-semibold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
                     onClick={() => dispatch(clearCart())}
                   >
                     Oui

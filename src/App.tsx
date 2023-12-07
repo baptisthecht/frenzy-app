@@ -9,6 +9,7 @@ function App() {
   const router = createBrowserRouter([
     { path: '/cat/:id', element: <CategoryPage /> },
     { path: '/pause', element: <PauseScreenPage /> },
+    { path: '/', element: <PauseScreenPage /> },
   ]);
 
   return (

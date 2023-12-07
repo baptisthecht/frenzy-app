@@ -1,47 +1,15 @@
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, addVariant, hideCancelOrderModal, resetActualVariants } from '../redux';
+import { hideCancelOrderModal, clearCart } from '../redux';
 
-export default function Example(props: any) {
+export default function Example() {
   const dispatch = useDispatch();
-
+  const sleepTimeout = useSelector((state: any) => state.sleepTimeout.sleepTimeout);
   const cancelButtonRef = useRef(null)
-  const variant = props.variant;
-  const product = props.product;
-  const actualVariants = useSelector((state: any) => state.actualVariants);
-
-  const handleClick = (option: any) => {
-    const newvariant = {'name' : variant.name, 'choice' : option.name, 'price': option.supplement, "product_id": product.id}
-    dispatch(addVariant(newvariant))
-    setTimeout(() => {
-      props.increment();
-      console.log(actualVariants.actualVariants)
-    }, 1);
-  }
-
-  useEffect(() => {
-      setTimeout(() => {
-        if(actualVariants.actualVariants.length-1 === product.variants.length) {
-          const productToAdd = {
-            "id": product.id,
-            "name": product.name,
-            "description": product.description,
-            "price": product.price,
-            "image": product.image, 
-            "variants": actualVariants.actualVariants,
-          }
-          dispatch(addToCart({product: productToAdd, number: 1}));
-          dispatch(resetActualVariants());
-          props.resetStep();
-        }
-      }, 100);
-  }, [actualVariants.actualVariants.length])
-
-
 
   return (
-    <Transition.Root show={true} as={Fragment}>
+    <Transition.Root show={sleepTimeout} as={Fragment}>
       <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={() => dispatch(hideCancelOrderModal())}>
         <Transition.Child
           as={Fragment}
@@ -52,7 +20,7 @@ export default function Example(props: any) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-50 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -71,22 +39,32 @@ export default function Example(props: any) {
 
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title as="h3" className="font-semibold leading-6 text-gray-900 text-3xl pb-5">
-                      {product.name}
-                      <img src={product.image} alt="" />
+                      Toujours là ?
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-xl text-gray-500 pb-3">
-                        Choisissez votre {variant.name.toLowerCase()} :
+                        Êtes-vous toujours en train de passer commande ?
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
-                  { variant.options?.map((option: any) => (
-                    <button onClick={() => {handleClick(option)}} key={option.name}><span className='text-xl flex flex-col gap-5 items-center'><img src={option.image}></img>{option.name}</span><span className='ml-1 text-md text-primary whitespace-nowrap'>{option.supplement > 0 ? '(+ ' + option.supplement.toFixed(2) + "€)" : ""}</span></button>
-                  ))}
+                  <button
+                    type="button"
+                    className="text-xl inline-flex w-full justify-center rounded-md bg-primary px-4 py-3 font-semibold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
+                    onClick={() => dispatch(clearCart())}
+                  >
+                    Oui
+                  </button>
+                  <button
+                    type="button"
+                    className="text-xl mt-3 inline-flex w-full justify-center rounded-md bg-white px-4 py-3 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0"
+                    onClick={() => dispatch(clearCart())}
+                    ref={cancelButtonRef}
+                  >
+                    Non
+                  </button>
                 </div>
-              
               </Dialog.Panel>
             </Transition.Child>
           </div>

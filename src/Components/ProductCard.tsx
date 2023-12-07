@@ -1,6 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, incrementStep } from "../redux";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux";
 import VariantModal from "./VariantModal";
+import { useState } from "react";
 
 export default function ProductCard(props: any) {
 
@@ -8,18 +9,19 @@ export default function ProductCard(props: any) {
 
     const product = props.product;
     const variants = product.variants;
-    const step = useSelector((state: any) => state.step);
+    const [step, setStep] = useState(-1)
 
     const addItemToCart = () => {
         if(variants) {
-            dispatch(incrementStep(product.id));
+            setStep((previous) => previous + 1)
+            console.log(step)
         }else{
-        dispatch(addToCart({product, number: 1}));
+            dispatch(addToCart({product, number: 1}));
         }
     }
 
     return (
-        <>
+        <div>
             <div onClick={() => addItemToCart()} className="bg-gray-100 flex flex-col items-center justify-center rounded-xl h-64 gap-3 cursor-pointer">
                 <img src="/img_menu.png" alt="img_menu" className="w-48"/>
                 <div className="flex flex-col items-center">
@@ -31,10 +33,11 @@ export default function ProductCard(props: any) {
                     </h1>
                 </div>
             </div>
-            { step.step === 0 && step.actualProductId === product.id ? <VariantModal variant={variants[0]} product={product} /> : <></>}
-            { step.step === 1 && step.actualProductId === product.id ? <VariantModal variant={variants[1]} product={product} /> : <></>}
-            { step.step === 2 && step.actualProductId === product.id ? <VariantModal variant={variants[2]} product={product} /> : <></>}
-        </>
+            { variants ? variants.map((variant: any, index: number) => (
+                step === variant.id && <VariantModal key={index} variant={variant} product={product} increment={() => setStep((previous) => previous + 1)} resetStep={() => {setStep(-1)}} />
+            )) : <></>}
+
+        </div>
         
       )
 }
