@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { decrementItemQuantity, incrementItemQuantity, setConfirmCart } from "../redux";
+import { decrementItemQuantity, incrementItemQuantity, setConfirmCart, setPayment } from "../redux";
 
 export default function test() {
 
@@ -19,6 +19,11 @@ export default function test() {
       const handleIncrease = (product: any) => {
         dispatch(incrementItemQuantity(product));
       };
+
+      const handleClick = () => {
+        dispatch(setConfirmCart(false))
+        dispatch(setPayment(true))
+      }
 
     return (
         <Transition.Root show={confirmCart.confirmCart} as={Fragment}>
@@ -102,7 +107,7 @@ export default function test() {
                     </div>
                     <div className="w-full flex items-center justify-center gap-5 py-3 pt-10">
                         <button onClick={() => { dispatch(setConfirmCart(false)) }} className="uppercase text-xl font-semibold w-96 py-3 px-2 bg-gray-200 rounded-full">Retour à ma commande</button>
-                        <button className="uppercase text-xl font-semibold w-96 py-3 px-2 bg-primary text-white rounded-full">Passer au paiement</button>
+                        <button onClick={() => handleClick()} className="uppercase text-xl font-semibold w-96 py-3 px-2 bg-primary text-white rounded-full">Passer au paiement</button>
                     </div>
                   
                   </Dialog.Panel>

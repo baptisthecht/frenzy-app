@@ -310,6 +310,26 @@ const confirmCartSlice = createSlice({
     },
 });
 
+const paymentSlice = createSlice({
+    name: 'payment',
+    initialState: {
+        askedPayment: false,
+        paymentBorne: undefined,
+        paymentCompleted: false,
+    },
+    reducers: {
+        setPayment(state, action) {
+            state.askedPayment = action.payload;
+        },
+        setPaymentBorne(state, action) {
+            state.paymentBorne = action.payload;
+        },
+        setPaymentCompleted(state, action) {
+            state.paymentCompleted = action.payload;
+        },
+    },
+});
+
 export const store = configureStore({
     reducer: {
         cancelOrderModal: cancelOrderModalSlice.reducer,
@@ -320,6 +340,7 @@ export const store = configureStore({
         whereToEat: whereToEatSlice.reducer,
         sleepTimeout: sleepTimeoutSlice.reducer,
         confirmCart: confirmCartSlice.reducer,
+        payment: paymentSlice.reducer,
     },
 });
 
@@ -333,3 +354,4 @@ export const { startVariantProcessus, endVariantProcessus } = variantProcessus.a
 export const { setWhereToEat, setHereChoice } = whereToEatSlice.actions;
 export const { setSleepTimeout } = sleepTimeoutSlice.actions;
 export const { setConfirmCart } = confirmCartSlice.actions;
+export const { setPayment, setPaymentBorne, setPaymentCompleted } = paymentSlice.actions;

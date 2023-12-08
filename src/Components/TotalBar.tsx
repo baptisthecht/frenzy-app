@@ -6,7 +6,6 @@ export default function TotalBar() {
     const carttotal = useSelector((state: any) => state.cart.total);
     const whereToEat = useSelector((state: any) => state.whereToEat.whereToEat);
     const eatHereChoice = useSelector((state: any) => state.whereToEat.hereChoice);
-    const cart = useSelector((state: any) => state.cart);
 
   return (
     <div className="w-full flex justify-between bg-primary py-2 px-8 font-semibold uppercase text-white text-xl">

@@ -10,6 +10,9 @@ import Modal from "../Components/Modal";
 import WhereToEatModal from "../Components/WhereToEatModal";
 import EatHereChoiceModal from "../Components/EatHereChoiceModal";
 import ConfirmCartModal from "../Components/ConfirmCartModal";
+import ChoosePaymentModal from "../Components/ChoosePaymentModal";
+import ConfirmedOrderModal from "../Components/ConfirmedOrderModal";
+import CBModal from "../Components/CBModal";
 
 export default function CategoryPage() {
 
@@ -37,6 +40,9 @@ export default function CategoryPage() {
         <WhereToEatModal />
         <EatHereChoiceModal />
         <ConfirmCartModal />
+        <ChoosePaymentModal />
+        <ConfirmedOrderModal />
+        <CBModal />
     </div>
   )
 }

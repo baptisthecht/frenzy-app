@@ -36,3 +36,23 @@
 .scroll-gray::-webkit-scrollbar-thumb:hover {
   background: theme('colors.gray.300');
 }
+
+.scroll-gray::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+.scroll-gray::-webkit-scrollbar-track {
+  background: theme('colors.white');
+}
+
+/* Handle */
+.scroll-gray::-webkit-scrollbar-thumb {
+  background: theme('colors.gray.200');
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+.scroll-gray::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.gray.300');
+}

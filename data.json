@@ -6,7 +6,8 @@
         "main_color": "#d87379",
         "where_to_eat": ["Sur place", "A emporter"],
         "multiple_eat_here": true,
-        "eat_here_possibilities": ["En salle", "En terrasse"]
+        "eat_here_possibilities": ["En salle", "En terrasse"],
+        "brings_to_table": true
     },
     "categories": [
         {
