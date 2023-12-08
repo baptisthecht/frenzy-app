@@ -11,11 +11,9 @@ export default function test() {
     const paymentBorne = useSelector((state: any) => state.payment.paymentBorne);
     const paymentCompleted = useSelector((state: any) => state.payment.paymentCompleted);
 
-
-
-      const handleClick = () => {
-        dispatch(setPaymentCompleted(true))
-      }
+    const handleClick = () => {
+      dispatch(setPaymentCompleted(true))
+    }
 
     return (
         <Transition.Root show={paymentBorne === true && paymentCompleted === false} as={Fragment}>

@@ -12,12 +12,6 @@ export default function ProductsCarousel(props: any) {
             {category.products.map((product: any, index: number) => (
                <ProductCard product={product} idcat={props.id} key={index} />
             ))}
-                        {category.products.map((product: any, index: number) => (
-               <ProductCard product={product} idcat={props.id} key={index} />
-            ))}
-                        {category.products.map((product: any, index: number) => (
-               <ProductCard product={product} idcat={props.id} key={index} />
-            ))}
         </div>
     </div>
   )

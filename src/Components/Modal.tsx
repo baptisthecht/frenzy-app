@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { hideCancelOrderModal, clearCart } from '../redux';
 
 export default function Example() {
+
   const dispatch = useDispatch();
   const open = useSelector((state: any) => state.cancelOrderModal.show);
-
   const cancelButtonRef = useRef(null)
 
   return (

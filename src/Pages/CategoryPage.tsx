@@ -16,11 +16,8 @@ import CBModal from "../Components/CBModal";
 
 export default function CategoryPage() {
 
-    // Get id from url
     const index = useParams().id;
-    // Convert id to number if exists, otherwise set to 0
     const indexNumber = index ? +index : 0;
-    // Check if category exists with this index, otherwise return to category 0 page
     const categoryExists = CompanyData.categories[indexNumber] ? true : false;
     if (!categoryExists) {
         window.location.href = '/cat/0';
@@ -36,6 +33,7 @@ export default function CategoryPage() {
         <TotalBar />
         <CartPreview />
         <ActionButtons />
+        {/* Modals : */}
         <Modal />
         <WhereToEatModal />
         <EatHereChoiceModal />

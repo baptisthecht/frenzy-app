@@ -3,16 +3,17 @@ import { decrementItemQuantity, incrementItemQuantity } from "../redux";
 
 export default function CartPreview() {
 
-    const cartitems = useSelector((state: any) => state.cart.items);
-    const filteredCartItems: Array<any> = cartitems.filter((item: any) => item.quantity > 0);
+    const cartItems = useSelector((state: any) => state.cart.items);
+    const filteredCartItems: Array<any> = cartItems.filter((item: any) => item.quantity > 0);
     const dispatch = useDispatch();
+
     const handleDecrease = (product: any) => {
         dispatch(decrementItemQuantity(product));
       };
     
-      const handleIncrease = (product: any) => {
+    const handleIncrease = (product: any) => {
         dispatch(incrementItemQuantity(product));
-      };
+    };
 
   return (
     <div className="bg-gray-50 h-[358px] px-8 py-3">

@@ -10,15 +10,6 @@ export default function CategoryCarousel() {
         {categories.map((category: any) => (
             <CategoryCard category={category} key={categories.findIndex((cat) => cat === category)}/>
         ))}
-                {categories.map((category: any) => (
-            <CategoryCard category={category} key={categories.findIndex((cat) => cat === category)}/>
-        ))}
-                {categories.map((category: any) => (
-            <CategoryCard category={category} key={categories.findIndex((cat) => cat === category)}/>
-        ))}
-                {categories.map((category: any) => (
-            <CategoryCard category={category} key={categories.findIndex((cat) => cat === category)}/>
-        ))}
     </div>
   )
 }

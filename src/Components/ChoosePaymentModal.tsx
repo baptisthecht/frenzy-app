@@ -10,21 +10,20 @@ export default function test() {
     const dispatch = useDispatch();
     const payment = useSelector((state: any) => state.payment.askedPayment);
 
-      const handleClick = (value: boolean) => {
-        if(value === false){
-          dispatch(setPaymentBorne(value))
-          dispatch(setPaymentCompleted(true))
-        }else{
-          dispatch(setPaymentBorne(value))
-        }
-        dispatch(setPayment(false))
-
+    const handleClick = (value: boolean) => {
+      if(value === false){
+        dispatch(setPaymentBorne(value))
+        dispatch(setPaymentCompleted(true))
+      }else{
+        dispatch(setPaymentBorne(value))
       }
+      dispatch(setPayment(false))
+    }
 
-      const cancelPayment = () => {
-        dispatch(setPayment(false))
-        dispatch(setConfirmCart(true))
-      }
+    const cancelPayment = () => {
+      dispatch(setPayment(false))
+      dispatch(setConfirmCart(true))
+    }
 
     return (
         <Transition.Root show={payment} as={Fragment}>
