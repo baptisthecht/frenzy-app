@@ -20,7 +20,7 @@ export default function CartPreview() {
         <h1 className="text-xl font-semibold uppercase mb-2">Mon panier</h1>
         <div className="grid grid-cols-2 max-h-64 overflow-y-scroll scroll-gray">
         {filteredCartItems.reverse().map((item: any, index: number) => (
-            <div className="mb-2">
+            <div className={`mb-2 ${item.product.variants ? "row-span-4" : "row-span-1"}`}>
                 <div className="px-5 flex justify-between items-center ">                        
                     <span className="font-semibold text-lg">{item.product.name}</span>
                     <div className="flex gap-5">

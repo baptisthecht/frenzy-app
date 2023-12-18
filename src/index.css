@@ -56,3 +56,5 @@
 .scroll-gray::-webkit-scrollbar-thumb:hover {
   background: theme('colors.gray.300');
 }
+
+

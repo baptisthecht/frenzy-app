@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { Fragment, useRef } from "react"
+import { Fragment, useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { setPaymentCompleted } from "../redux";
+import { setPaymentCompleted, setPaymentIntentId } from "../redux";
 
 export default function test() {
 
@@ -10,10 +10,68 @@ export default function test() {
     const dispatch = useDispatch();
     const paymentBorne = useSelector((state: any) => state.payment.paymentBorne);
     const paymentCompleted = useSelector((state: any) => state.payment.paymentCompleted);
-
+    const totalCart = useSelector((state: any) => state.cart.total);
+    // const paymentIntentId = useSelector((state: any) => state.payment.paymentIntentId);
+    var PaymentIntentdata: any = undefined;
     const handleClick = () => {
-      dispatch(setPaymentCompleted(true))
+      simulatePayment()
     }
+
+    const createPaymentIntent = async () => {
+      const response = await fetch('http://localhost:3000/api/process-payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({amount: totalCart}),
+      });
+      PaymentIntentdata = await response.json();
+      if(PaymentIntentdata.error){
+        console.warn(PaymentIntentdata.error)
+      }
+    }
+
+    const checkForPayment = async () => {
+      const response = await fetch('http://localhost:3000/api/get-payment-info', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({PaymentIntentId: PaymentIntentdata.paymentIntent.id}),
+      });
+      const data = await response.json();
+      if(data.paid === true && data.captured === true){
+        dispatch(setPaymentCompleted(true))
+        console.log('paid')
+      }else{
+        console.log(PaymentIntentdata.paymentIntent.id)
+      }
+      return data;
+    } 
+
+    const simulatePayment = async () => {
+      const response = await fetch('http://localhost:3000/readers/simulate-payments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({PaymentIntentId: PaymentIntentdata.paymentIntent.id}),
+      });
+      const data = await response.json();
+      return data;
+    }
+
+    useEffect(() => {
+      if(paymentBorne){
+        createPaymentIntent()
+        setTimeout(() => {
+          const intervalID = setInterval(() => {
+            checkForPayment();
+          }, 1000);
+          return () => clearInterval(intervalID);
+        }, 1000);
+      }
+    }, [paymentBorne])
 
     return (
         <Transition.Root show={paymentBorne === true && paymentCompleted === false} as={Fragment}>

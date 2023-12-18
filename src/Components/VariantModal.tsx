@@ -16,7 +16,6 @@ export default function Example(props: any) {
     dispatch(addVariant(newvariant))
     setTimeout(() => {
       props.increment();
-      console.log(actualVariants.actualVariants)
     }, 1);
   }
 
@@ -31,7 +30,7 @@ export default function Example(props: any) {
             "image": product.image, 
             "variants": actualVariants.actualVariants,
           }
-          dispatch(addToCart({product: productToAdd, number: 1}));
+          dispatch(addToCart({product: productToAdd}));
           dispatch(resetActualVariants());
           props.resetStep();
         }

@@ -105,7 +105,7 @@ const cartSlice = createSlice({
         clearCart(state) {
             state.items = [];
             state.total = 0;
-            window.location.href = '/pause';
+            window.location.href = '/';
         },
         incrementItemQuantity(state, action) {
             const existingItem = state.items.find((item) => {
@@ -316,6 +316,8 @@ const paymentSlice = createSlice({
         askedPayment: false,
         paymentBorne: undefined,
         paymentCompleted: false,
+        command_number: undefined,
+        paymentIntentId: undefined,
     },
     reducers: {
         setPayment(state, action) {
@@ -326,6 +328,32 @@ const paymentSlice = createSlice({
         },
         setPaymentCompleted(state, action) {
             state.paymentCompleted = action.payload;
+        },
+        setCommandNumber(state, action) {
+            state.command_number = action.payload;
+        },
+        setPaymentIntentId(state, action) {
+            state.paymentIntentId = action.payload;
+        },
+    },
+});
+
+const errorSlice = createSlice({
+    name: 'error',
+    initialState: {
+        error: false,
+        message: "",
+    },
+    reducers: {
+        setError(state, action) {
+            state.error = action.payload;
+        },
+        setMessage(state, action) {
+            state.message = action.payload;
+        },
+        resetError(state) {
+            state.error = false;
+            state.message = "";
         },
     },
 });
@@ -341,6 +369,7 @@ export const store = configureStore({
         sleepTimeout: sleepTimeoutSlice.reducer,
         confirmCart: confirmCartSlice.reducer,
         payment: paymentSlice.reducer,
+        error: errorSlice.reducer,
     },
 });
 
@@ -354,4 +383,5 @@ export const { startVariantProcessus, endVariantProcessus } = variantProcessus.a
 export const { setWhereToEat, setHereChoice } = whereToEatSlice.actions;
 export const { setSleepTimeout } = sleepTimeoutSlice.actions;
 export const { setConfirmCart } = confirmCartSlice.actions;
-export const { setPayment, setPaymentBorne, setPaymentCompleted } = paymentSlice.actions;
+export const { setPayment, setPaymentBorne, setPaymentCompleted, setCommandNumber, setPaymentIntentId } = paymentSlice.actions;
+export const { setError, setMessage, resetError } = errorSlice.actions;

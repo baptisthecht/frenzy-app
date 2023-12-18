@@ -14,7 +14,6 @@ export default function ProductCard(props: any) {
     const addItemToCart = () => {
         if(variants) {
             setStep((previous) => previous + 1)
-            console.log(step)
         }else{
             dispatch(addToCart({product, number: 1}));
         }
