@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react"
-import { Fragment, useEffect, useRef, useState } from "react"
+import { Fragment, useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { setPaymentCompleted, setPaymentIntentId } from "../redux";
+import { setPaymentCompleted } from "../redux";
 
 export default function test() {
 
