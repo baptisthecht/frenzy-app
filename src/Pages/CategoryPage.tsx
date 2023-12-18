@@ -54,17 +54,16 @@ export default function CategoryPage() {
 			eatHereChoice: EatHereChoice,
 			API_KEY: API_KEY,
 		};
-		try {
-			await axios
-				.post(import.meta.env.VITE_API_URL + "/api/neworder", order)
-				.then((res) => {
-					dispatch(setCommandNumber(res.data.command_number));
-				});
-		} catch (err: any) {
-			dispatch(setPaymentCompleted(false));
-			dispatch(setError(true));
-			dispatch(setMessage(err.message));
-		}
+		await axios
+			.post(import.meta.env.VITE_API_URL + "/api/neworder", order)
+			.then((res) => {
+				dispatch(setCommandNumber(res.data.command_number));
+			})
+			.catch((err: any) => {
+				dispatch(setPaymentCompleted(false));
+				dispatch(setError(true));
+				dispatch(setMessage(err.message));
+			});
 	};
 
 	useEffect(() => {
